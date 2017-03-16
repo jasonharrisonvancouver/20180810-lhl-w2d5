@@ -24,6 +24,8 @@
 		AA79C9FB1E31907300A5044D /* TopView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA79C9FA1E31907300A5044D /* TopView.m */; };
 		AA79CA071E3263C100A5044D /* BottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA79CA061E3263C100A5044D /* BottomView.m */; };
 		AA79CA0A1E32644C00A5044D /* LineSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = AA79CA091E32644C00A5044D /* LineSegment.m */; };
+		AA8AC1C01E7B30CF008689CD /* UnderstandingResponderChainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8AC1BF1E7B30CF008689CD /* UnderstandingResponderChainVC.m */; };
+		AA8AC1C41E7B3102008689CD /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8AC1C31E7B3102008689CD /* CustomView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,10 @@
 		AA79CA061E3263C100A5044D /* BottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomView.m; sourceTree = "<group>"; };
 		AA79CA081E32644C00A5044D /* LineSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineSegment.h; sourceTree = "<group>"; };
 		AA79CA091E32644C00A5044D /* LineSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineSegment.m; sourceTree = "<group>"; };
+		AA8AC1BE1E7B30CF008689CD /* UnderstandingResponderChainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnderstandingResponderChainVC.h; sourceTree = "<group>"; };
+		AA8AC1BF1E7B30CF008689CD /* UnderstandingResponderChainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnderstandingResponderChainVC.m; sourceTree = "<group>"; };
+		AA8AC1C21E7B3102008689CD /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		AA8AC1C31E7B3102008689CD /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,7 @@
 				AA79CA011E3190B000A5044D /* TextViewControllers */,
 				AA79CA001E3190A000A5044D /* WebViewControllers */,
 				AA79C9FF1E31909300A5044D /* CoreGraphics */,
+				AA8AC1C11E7B30E5008689CD /* ResponderChain */,
 				AA79C9C61E31292B00A5044D /* Main.storyboard */,
 				AA79C9BD1E31292A00A5044D /* Supporting Files */,
 			);
@@ -189,6 +196,17 @@
 				AA79C9E61E3140AF00A5044D /* TextViewViewController.m */,
 			);
 			name = TextViewControllers;
+			sourceTree = "<group>";
+		};
+		AA8AC1C11E7B30E5008689CD /* ResponderChain */ = {
+			isa = PBXGroup;
+			children = (
+				AA8AC1BE1E7B30CF008689CD /* UnderstandingResponderChainVC.h */,
+				AA8AC1BF1E7B30CF008689CD /* UnderstandingResponderChainVC.m */,
+				AA8AC1C21E7B3102008689CD /* CustomView.h */,
+				AA8AC1C31E7B3102008689CD /* CustomView.m */,
+			);
+			name = ResponderChain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,7 +315,9 @@
 			files = (
 				AA79C9F81E318FC300A5044D /* CoreGraphicsViewController.m in Sources */,
 				AA79C9E41E31296500A5044D /* TextFieldViewController.m in Sources */,
+				AA8AC1C41E7B3102008689CD /* CustomView.m in Sources */,
 				AA79C9F01E31846B00A5044D /* WebViewController.m in Sources */,
+				AA8AC1C01E7B30CF008689CD /* UnderstandingResponderChainVC.m in Sources */,
 				AA79CA071E3263C100A5044D /* BottomView.m in Sources */,
 				AA79C9EA1E314A5C00A5044D /* WebManagerViewController.m in Sources */,
 				AA79C9F31E3188C900A5044D /* WKWebViewController.m in Sources */,
