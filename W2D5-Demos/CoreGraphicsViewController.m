@@ -17,10 +17,6 @@
 
 @implementation CoreGraphicsViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-
 - (IBAction)clear {
   [self.bottomView clear];
 }
