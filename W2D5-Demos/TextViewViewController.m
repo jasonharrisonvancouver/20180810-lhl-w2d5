@@ -10,30 +10,49 @@
 
 @interface TextViewViewController ()<UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *textView;
-
 @end
 
 @implementation TextViewViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  [self setupTextView];
+  [self setupStyle];
+}
+
+- (void)setupTextView {
   self.textView.text = @"";
   self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
+- (void)setupStyle {
+  self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+  self.navigationController.navigationBar.translucent = YES;
+}
 
 - (IBAction)save:(UIBarButtonItem *)sender {
-  NSLog(@"%s", __PRETTY_FUNCTION__);
-  NSLog(@"%@", self.textView.text);
+  NSLog(@"%d: %s", __LINE__, __PRETTY_FUNCTION__);
+  NSLog(@"%d: %@", __LINE__, self.textView.text);
   [self.textView resignFirstResponder];
 }
 
-
+#pragma mark - Delegate Methodsw
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
   // clears the text
   NSLog(@"%s", __PRETTY_FUNCTION__);
   self.textView.text = @"";
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+  NSLog(@"%d: %s", __LINE__, __PRETTY_FUNCTION__);
+  NSLog(@"%d: %@", __LINE__, text);
+  return YES;
+}
+
+- (void)textViewDidChange:(UITextView *)textView {
+  NSLog(@"%d: %s", __LINE__, __PRETTY_FUNCTION__);
+  NSLog(@"%d: %@", __LINE__, textView.text);
 }
 
 @end
