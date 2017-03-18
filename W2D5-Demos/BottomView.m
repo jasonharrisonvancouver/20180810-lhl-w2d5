@@ -36,6 +36,7 @@
   UITouch *touch = touches.anyObject;
   CGPoint second = [touch locationInView:self];
   CGPoint first = [touch previousLocationInView:self];
+  NSLog(@"%d: %@, %@", __LINE__, NSStringFromCGPoint(first), NSStringFromCGPoint(second));
   LineSegment *segment = [[LineSegment alloc] initWithFirstPoint:first secondPoint:second];
   [self.line addObject:segment];
   [self setNeedsDisplay];
@@ -54,7 +55,7 @@
       [path moveToPoint:segment.firstPoint];
       continue;
     }
-    [path addLineToPoint:segment.firstPoint];
+//    [path addLineToPoint:segment.firstPoint];
     [path addLineToPoint:segment.secondPoint];
   }
   [path stroke];

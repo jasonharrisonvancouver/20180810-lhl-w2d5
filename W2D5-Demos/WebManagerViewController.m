@@ -11,6 +11,7 @@
 
 
 @interface WebManagerViewController ()<SFSafariViewControllerDelegate>
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *test;
 
 @end
 

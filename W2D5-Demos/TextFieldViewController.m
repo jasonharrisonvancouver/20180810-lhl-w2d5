@@ -27,7 +27,7 @@
 
 - (void)setupTextField {
   // set the keyboard type
-  self.textField.keyboardType = UIKeyboardTypeNumberPad;
+  self.textField.keyboardType = UIKeyboardTypeDefault;
   self.textField.clearButtonMode = UITextFieldViewModeUnlessEditing;
 }
 
@@ -75,6 +75,7 @@
 // Info on NSRange: http://nshipster.com/nsrange/
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+  
   NSLog(@"%d: %s", __LINE__, __PRETTY_FUNCTION__);
   NSLog(@"%d: range: %@",__LINE__, NSStringFromRange(range));
   NSLog(@"%d: replacement string: %@", __LINE__, string);
