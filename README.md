@@ -17,6 +17,7 @@
 * These inputs conform to the UITextInputTraits protocol which allows you to customize the keyboard type
 
 # UIResponder
+
 * Both UITextField & UITextView inherit from UIResponder
 * Let’s talk about responders in iOS.
 * All responder objects inherit from the class UIResponder
