@@ -7,7 +7,9 @@
 //
 
 #import "WKWebViewController.h"
-@import WebKit; // you have to import webkit
+
+// Required for WKWebView
+@import WebKit;
 
 @interface WKWebViewController ()<WKNavigationDelegate>
 @property (nonatomic) UIView *containerView;
@@ -38,17 +40,17 @@
 }
 
 - (void)viewDidLayoutSubviews {
-  [super viewDidLayoutSubviews];
   self.webView.frame = self.containerView.frame;
   self.activityIndicator.center = self.view.center;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-  NSURL *url = [NSURL URLWithString:@"https://www.thestar.com"];
+  NSURL *url = [NSURL URLWithString:@"https://stackoverflow.com"];
   NSURLRequest *request = [NSURLRequest requestWithURL:url];
   [self.webView loadRequest:request];
 }
 
+// Example of KVO (Key Value Observing)
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
   if ([keyPath isEqualToString:@"loading"]) {
     NSLog(@"%@", change);

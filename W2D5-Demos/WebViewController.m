@@ -16,12 +16,18 @@
 @implementation WebViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-  NSURL *url = [NSURL URLWithString:@"https://guardian.co.uk"];
+  [super viewDidLoad];
+  [self setup];
+}
+
+- (void)setup {
+  NSURL *url = [NSURL URLWithString:@"https://stackoverflow.com"];
   NSURLRequest *request = [NSURLRequest requestWithURL:url];
   [self.webView loadRequest:request];
   self.webView.delegate = self;
 }
+
+#pragma mark - Delegate Methods
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
   [self.activityIndicator startAnimating];

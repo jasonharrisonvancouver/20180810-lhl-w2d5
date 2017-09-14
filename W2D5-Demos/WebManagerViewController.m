@@ -7,12 +7,11 @@
 //
 
 #import "WebManagerViewController.h"
+// Required for SFSafariViewController
 @import SafariServices;
-
 
 @interface WebManagerViewController ()<SFSafariViewControllerDelegate>
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *test;
-
 @end
 
 @implementation WebManagerViewController
@@ -29,7 +28,7 @@
 
 - (IBAction)safariVCTapped:(UIButton *)sender {
   // must add SafariServices for this to work
-  NSURL *url = [NSURL URLWithString:@"https://www.thestar.com"];
+  NSURL *url = [NSURL URLWithString:@"https://www.google.com"];
   SFSafariViewController *sfVC = [[SFSafariViewController alloc] initWithURL:url];
   [self presentViewController:sfVC animated:YES completion:nil];
 }
