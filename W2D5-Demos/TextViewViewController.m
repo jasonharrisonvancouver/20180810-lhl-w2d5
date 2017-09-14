@@ -20,6 +20,8 @@
   [self setupStyle];
 }
 
+#pragma mark - Setup
+
 - (void)setupTextView {
   self.textView.text = @"";
   self.automaticallyAdjustsScrollViewInsets = NO;
@@ -30,13 +32,15 @@
   self.navigationController.navigationBar.translucent = YES;
 }
 
+#pragma mark - Save
+
 - (IBAction)save:(UIBarButtonItem *)sender {
   NSLog(@"%d: %s", __LINE__, __PRETTY_FUNCTION__);
   NSLog(@"%d: %@", __LINE__, self.textView.text);
   [self.textView resignFirstResponder];
 }
 
-#pragma mark - Delegate Methodsw
+#pragma mark - Delegate Methods
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
   // clears the text
@@ -47,7 +51,12 @@
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
   NSLog(@"%d: %s", __LINE__, __PRETTY_FUNCTION__);
   NSLog(@"%d: %@", __LINE__, text);
-  return YES;
+  BOOL result = YES;
+  // validation prevents inserting ! in the input field
+  if ([text isEqualToString:@"!"]) {
+    result = NO;
+  }
+  return result;
 }
 
 - (void)textViewDidChange:(UITextView *)textView {
