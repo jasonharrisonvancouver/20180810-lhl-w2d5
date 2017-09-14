@@ -12,7 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *topLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bottonLabel;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
-
 @end
 
 @implementation TextFieldViewController
@@ -29,6 +28,7 @@
   // set the keyboard type
   self.textField.keyboardType = UIKeyboardTypeDefault;
   self.textField.clearButtonMode = UITextFieldViewModeUnlessEditing;
+  NSLog(@"%@", self.textField.typingAttributes);
 }
 
 // this is called by the button and gesture
@@ -47,7 +47,7 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
   [self displayText:@""];
   self.bottonLabel.text = @"";
-  // clears text when we begin editing (we could have set a property on textfield to do this too)
+  // clears text when we begin editing (we could have set the property clearsOnBeginEditing on textfield to do this too)
   self.textField.text = @"";
   NSLog(@"%d: %s", __LINE__, __PRETTY_FUNCTION__);
 }
@@ -65,6 +65,7 @@
   return YES;
 }
 
+// fires when the return key is tapped which allows us to respond accordingly
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
   [textField resignFirstResponder];
   NSLog(@"%d: %s",__LINE__, __PRETTY_FUNCTION__);
@@ -74,6 +75,17 @@
 
 // Info on NSRange: http://nshipster.com/nsrange/
 
+/*
+eg.
+ NSString *name = @"steve_thompson";
+	NSRange range = NSMakeRange(6, 6);
+	NSString *subString = [name substringWithRange:range];
+  NSLog(@"%@", subString); // prints thomps
+
+*/
+
+// used to handle populating the label while we type
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
   
   NSLog(@"%d: %s", __LINE__, __PRETTY_FUNCTION__);
@@ -81,8 +93,8 @@
   NSLog(@"%d: replacement string: %@", __LINE__, string);
   
   NSString *bottomLabelText = self.bottonLabel.text;
-  
-  if (range.length == 1) {
+  BOOL isDeleting = range.length == 1;
+  if (isDeleting) {
     // removing characters
     bottomLabelText = [bottomLabelText substringToIndex:range.location];
   }
