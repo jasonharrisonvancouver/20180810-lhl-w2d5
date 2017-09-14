@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zU2-MO-gAw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3ej-gW-SEx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -158,36 +158,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMO-0d-WUX">
-                                <rect key="frame" x="117" y="94" width="141" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="SafariViewController"/>
-                                <connections>
-                                    <action selector="safariVCTapped:" destination="9Sr-Bs-M9s" eventType="touchUpInside" id="Qng-LB-5Tx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Slv-6h-b9j">
-                                <rect key="frame" x="148" y="318" width="78" height="30"/>
-                                <state key="normal" title="UIWebView"/>
-                                <connections>
-                                    <segue destination="ZhB-gm-aoA" kind="show" id="ghg-FG-PKd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxe-Ps-7uN">
-                                <rect key="frame" x="143" y="504" width="88" height="30"/>
-                                <state key="normal" title="WKWebView"/>
-                                <connections>
-                                    <segue destination="xaz-9a-ew6" kind="show" id="vNp-0g-9eE"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YSH-gk-USW">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMO-0d-WUX">
+                                        <rect key="frame" x="101" y="0.0" width="141" height="201"/>
+                                        <state key="normal" title="SafariViewController"/>
+                                        <connections>
+                                            <action selector="safariVCTapped:" destination="9Sr-Bs-M9s" eventType="touchUpInside" id="Qng-LB-5Tx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Slv-6h-b9j">
+                                        <rect key="frame" x="132.5" y="201" width="78" height="201"/>
+                                        <state key="normal" title="UIWebView"/>
+                                        <connections>
+                                            <segue destination="ZhB-gm-aoA" kind="show" id="ghg-FG-PKd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxe-Ps-7uN">
+                                        <rect key="frame" x="127.5" y="402" width="88" height="201"/>
+                                        <state key="normal" title="WKWebView"/>
+                                        <connections>
+                                            <segue destination="xaz-9a-ew6" kind="show" id="vNp-0g-9eE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.94246441130000003" green="0.83959698679999994" blue="0.35277429220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.88460803030000001" green="0.44827917220000002" blue="0.35293778780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="zxe-Ps-7uN" firstAttribute="centerX" secondItem="0uK-qc-ox3" secondAttribute="centerX" id="8N0-Jv-DBo"/>
-                            <constraint firstItem="Slv-6h-b9j" firstAttribute="centerY" secondItem="0uK-qc-ox3" secondAttribute="centerY" id="QYc-Yl-Zg6"/>
-                            <constraint firstItem="Slv-6h-b9j" firstAttribute="centerX" secondItem="0uK-qc-ox3" secondAttribute="centerX" id="Rxk-9F-xfT"/>
-                            <constraint firstItem="zxe-Ps-7uN" firstAttribute="centerY" secondItem="0uK-qc-ox3" secondAttribute="centerY" constant="185.5" id="Uaa-zj-VNC"/>
+                            <constraint firstItem="yl7-Ru-gQY" firstAttribute="top" secondItem="YSH-gk-USW" secondAttribute="bottom" id="7sf-8T-8A1"/>
+                            <constraint firstItem="YSH-gk-USW" firstAttribute="leading" secondItem="0uK-qc-ox3" secondAttribute="leadingMargin" id="Fyl-Bv-yy6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YSH-gk-USW" secondAttribute="trailing" id="Qai-H7-H3f"/>
+                            <constraint firstItem="YSH-gk-USW" firstAttribute="top" secondItem="Xaf-lj-Ez1" secondAttribute="bottom" id="Wjn-aW-Jgt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FyT-n1-ab3"/>
