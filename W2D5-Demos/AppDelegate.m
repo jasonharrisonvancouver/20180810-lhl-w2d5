@@ -8,12 +8,7 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
-
-@end
-
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   
@@ -21,18 +16,6 @@
 }
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-  
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-  
-}
-
-- (void)applicationWillResignActive:(UIApplication *)application {
-  
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application {
   
 }
 

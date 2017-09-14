@@ -134,8 +134,6 @@
 				AA79C9C91E31292B00A5044D /* Assets.xcassets */,
 				AA79C9CB1E31292B00A5044D /* LaunchScreen.storyboard */,
 				AA79C9CE1E31292B00A5044D /* Info.plist */,
-				AA79C9C01E31292B00A5044D /* AppDelegate.h */,
-				AA79C9C11E31292B00A5044D /* AppDelegate.m */,
 				AA79C9BE1E31292A00A5044D /* main.m */,
 			);
 			name = "Supporting Files";
@@ -205,6 +203,8 @@
 				AA8AC1BF1E7B30CF008689CD /* UnderstandingResponderChainVC.m */,
 				AA8AC1C21E7B3102008689CD /* CustomView.h */,
 				AA8AC1C31E7B3102008689CD /* CustomView.m */,
+				AA79C9C01E31292B00A5044D /* AppDelegate.h */,
+				AA79C9C11E31292B00A5044D /* AppDelegate.m */,
 			);
 			name = ResponderChain;
 			sourceTree = "<group>";
