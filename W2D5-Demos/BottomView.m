@@ -55,7 +55,7 @@
       [path moveToPoint:segment.firstPoint];
       continue;
     }
-//    [path addLineToPoint:segment.firstPoint];
+    [path addLineToPoint:segment.firstPoint];
     [path addLineToPoint:segment.secondPoint];
   }
   [path stroke];
