@@ -15,11 +15,11 @@
 @property (nonatomic) UIView *containerView;
 @property (nonatomic) WKWebView *webView;
 @property (nonatomic) UIActivityIndicatorView *activityIndicator;
-@property (weak, nonatomic) IBOutlet UIView *realContainerView;
 
 @end
 
-// Recommend to NEVER use this!
+// Recommend to NEVER use this! Used here to show how some legacy code
+// might have done it
 #define tag 200
 
 @implementation WKWebViewController
@@ -27,10 +27,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    self.containerView = [self.view viewWithTag:tag];  // Don't do this, use IBOutlet instead
+    self.containerView = [self.view viewWithTag:tag];  // Recommend don't do this, use IBOutlet instead
     self.webView = [[WKWebView alloc] initWithFrame:CGRectZero];
     self.webView.navigationDelegate = self;
-    [self.realContainerView addSubview:self.webView];
+    [self.containerView addSubview:self.webView];
     [self.webView addObserver:self
                    forKeyPath:@"loading"
                       options:NSKeyValueObservingOptionNew
