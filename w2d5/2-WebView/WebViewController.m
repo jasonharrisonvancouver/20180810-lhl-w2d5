@@ -8,36 +8,41 @@
 
 #import "WebViewController.h"
 
-@interface WebViewController ()<UIWebViewDelegate>
+@interface WebViewController () <UIWebViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+
 @end
+
 
 @implementation WebViewController
 
-- (void)viewDidLoad {
-  [super viewDidLoad];
-  [self setup];
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self setup];
 }
 
-- (void)setup {
-  NSURL *url = [NSURL URLWithString:@"https://stackoverflow.com"];
-  NSURLRequest *request = [NSURLRequest requestWithURL:url];
-  [self.webView loadRequest:request];
-  self.webView.delegate = self;
+- (void)setup
+{
+    NSURL *url = [NSURL URLWithString:@"https://stackoverflow.com"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:request];
+    self.webView.delegate = self;
 }
 
 #pragma mark - Delegate Methods
 
-- (void)webViewDidStartLoad:(UIWebView *)webView {
-  [self.activityIndicator startAnimating];
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    [self.activityIndicator startAnimating];
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-  [self.activityIndicator stopAnimating];
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [self.activityIndicator stopAnimating];
+    self.activityIndicator.hidden = true;
 }
-
-
-
 
 @end
