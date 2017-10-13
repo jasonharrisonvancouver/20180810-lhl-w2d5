@@ -32,7 +32,8 @@
     // must add SafariServices for this to work
     NSURL *url = [NSURL URLWithString:@"https://www.google.com"];
     SFSafariViewController *sfVC = [[SFSafariViewController alloc] initWithURL:url];
-    [self presentViewController:sfVC animated:YES
+    [self presentViewController:sfVC
+                       animated:YES
                      completion:nil];
 }
 

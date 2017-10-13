@@ -11,14 +11,17 @@
 #import "BottomView.h"
 
 @interface CoreGraphicsViewController ()<UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet BottomView *bottomView;
 @property (weak, nonatomic) IBOutlet TopView *topView;
+
 @end
+
 
 @implementation CoreGraphicsViewController
 
 - (IBAction)clear {
-  [self.bottomView clear];
+    [self.bottomView clear];
 }
 
 
