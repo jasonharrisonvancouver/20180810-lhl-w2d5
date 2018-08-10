@@ -25,7 +25,6 @@
 - (void)setupTextView
 {
     self.textView.text = @"";
-    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 #pragma mark - Save

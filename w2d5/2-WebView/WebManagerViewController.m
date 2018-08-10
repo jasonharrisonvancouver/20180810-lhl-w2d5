@@ -12,17 +12,10 @@
 
 @interface WebManagerViewController ()<SFSafariViewControllerDelegate>
 
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *test;
-
 @end
 
 
 @implementation WebManagerViewController
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
 
 // SFSafariViewController
 // If your app lets users view websites from anywhere on the Internet, use the SFSafariViewController class. If your app customizes, interacts with, or controls the display of web content, use the WKWebView class.

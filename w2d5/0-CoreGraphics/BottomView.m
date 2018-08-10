@@ -10,8 +10,10 @@
 #import "LineSegmentDataModel.h"
 
 @interface BottomView()
+
 // An array of line segments mimicking the path of the user has traced
 @property (nonatomic) NSMutableArray<LineSegmentDataModel *> *line;
+
 @end
 
 @implementation BottomView

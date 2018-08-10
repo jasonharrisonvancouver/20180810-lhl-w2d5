@@ -9,16 +9,26 @@
 #import "TextFieldViewController.h"
 
 @interface TextFieldViewController () <UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UILabel *topLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bottomLabel;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
+
 @end
 
 @implementation TextFieldViewController
 
+// this is called by the button and gesture
+- (IBAction)dismissKeyboard:(id)sender
+{
+    [self.textField resignFirstResponder];
+    NSLog(@"In dismissKeyboard:");
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.textField.delegate = self;
     [self setupTextField];
     [self displayTopLabelText:@""];
@@ -31,13 +41,6 @@
     self.textField.keyboardType = UIKeyboardTypeDefault;
     self.textField.clearButtonMode = UITextFieldViewModeUnlessEditing;
     NSLog(@"In setupTextField: %@", self.textField.typingAttributes);
-}
-
-// this is called by the button and gesture
-- (IBAction)dismissKeyboard:(id)sender
-{
-    [self.textField resignFirstResponder];
-    NSLog(@"In dismissKeyboard:");
 }
 
 - (void)displayTopLabelText:(NSString *)text
